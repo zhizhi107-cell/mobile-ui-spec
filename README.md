@@ -1,111 +1,144 @@
 # Mobile UI Spec
 
-一个用于审查、整理和优化移动端 / 产品 UI 设计规范的 Codex Skill。
+A locale-aware skill that helps AI create better mobile UI design specifications and cleaner design-system documentation layouts.
 
-它的重点不是“生成一堆看起来像规范的文字”，而是帮助 AI 更像一个有经验的 UI/UX 设计师：先判断规则是否合理，再决定怎么写、怎么排版、怎么交付给团队使用。
+It is built for designers, product teams, and AI-assisted workflows where UI guidelines need to be clear, practical, maintainable, well-structured, and easy for developers to implement.
 
-## 它解决什么问题
+Instead of letting AI generate generic design-spec text or messy documentation pages, this skill guides AI to think more like an experienced UI/UX designer: review the system first, consolidate scattered rules, translate vague feedback into usable guidance, improve page layout, and produce documentation that can actually support design-system work.
 
-AI 在做设计规范时很容易出现这些问题：
+## Why This Skill Exists
 
-- 把用户口头反馈原样写进规范，导致文案像聊天记录。
-- 为了显得完整，堆很多重复规则、弱卡片和低频 token。
-- 把颜色、字号、图标写得过死，后续组件适配很困难。
-- 只关注页面好不好看，忽略开发落地、命名、资产数量和维护成本。
-- 规范页排版不稳定，边距、字号、模块间距和前后页面不一致。
-- 过度使用线框、灰底、卡片套卡片，让规范页显得笨重。
-- 图标、颜色、字号示例不是按真实资产和真实尺寸展示。
-- 中文项目和英文项目混用文案习惯，导致本地化表达不自然。
+AI often struggles with design specifications.
 
-这个 skill 会把这些问题转成可执行的检查规则，让 Codex 在处理设计规范时先做判断，再做输出。
+Common problems include:
 
-## 适合什么场景
+- Repeating user feedback directly instead of rewriting it as professional specification language.
+- Adding too many tokens, weak cards, repeated rules, and low-value sections just to look complete.
+- Making colors, typography, icons, or spacing rules too rigid for real component adaptation.
+- Focusing on visual presentation while ignoring naming, implementation clarity, asset counts, and maintenance cost.
+- Creating design-spec pages with inconsistent margins, type sizes, module spacing, and layout rhythm.
+- Overusing outlines, grey blocks, and nested cards instead of using hierarchy and whitespace.
+- Building Figma spec pages that look crowded, misaligned, or visually disconnected from the rest of the system.
+- Showing icons, colors, or typography examples without real assets, real dimensions, or optical alignment checks.
+- Mixing Chinese and English copywriting habits, resulting in unnatural localized UI text.
 
-- 移动 App、H5、小程序、移动 Web 的 UI 规范
-- Figma 设计系统文档页
-- 颜色、字体、图标、间距等基础规范
-- 按钮、表单、列表、标签、徽标、反馈状态等组件规范
-- 中英文 UI 文案和规范文案优化
-- 设计规范审查、重排、收敛和补充
-- 将散乱设计稿整理成团队可使用的规范页
+This skill turns those recurring issues into practical review rules, so AI can produce design documentation that is clearer, cleaner, more useful, and more design-system-ready.
 
-## 核心判断原则
+## What It Helps AI Do Better
 
-### 1. 用户反馈不是规范文案
+- Write design specifications with clearer logic and less generic wording.
+- Turn vague feedback into stable, team-facing rules.
+- Consolidate messy tokens, states, categories, and component rules.
+- Improve design-spec page layout, spacing, hierarchy, and alignment.
+- Reduce unnecessary outlines, nested cards, grey blocks, and decorative containers.
+- Keep new documentation modules consistent with the existing page system.
+- Use real assets, real dimensions, and optical checks in examples.
+- Support Chinese, English, and international product documentation.
+- Balance designer readability with developer handoff clarity.
 
-用户说“这里太死”“这个感觉不对”“不要这么写”，这些是设计判断输入，不应该原样出现在规范页里。
+## What It Helps With
 
-正确做法是把它转译成面向团队的规范语言：
+- Mobile app, mobile web, H5, and mini-program UI specifications
+- Figma design-system documentation pages
+- Color, typography, icon, spacing, and asset guidelines
+- Component rules for buttons, forms, lists, tags, badges, feedback states, dialogs, and bottom sheets
+- Localized Chinese and English UI copy
+- Design-spec review, cleanup, consolidation, layout refinement, and content rewriting
+- Turning messy design drafts into structured team-facing documentation
 
-- 说明规则本身
-- 说明适用边界
-- 说明如何落地
-- 避免过程性、情绪化、临时性的表达
+## Core Principles
 
-### 2. 基础规范要保持通用性
+### 1. User Feedback Is Not Final Spec Copy
 
-颜色、字体、图标、间距这类基础规范不能只服务一个按钮或一个页面。
+Design feedback such as "this feels too rigid" or "this layout looks messy" is useful input, but it should not be pasted directly into a specification page.
 
-这个 skill 会优先判断：
+The skill helps AI translate feedback into stable documentation language:
 
-- 是否过度绑定单一组件
-- 是否还有复用空间
-- 命名是否足够中性
-- 示例是否限制了后续适配
+- what the rule is
+- where it applies
+- how it should be implemented
+- what should remain flexible
 
-### 3. 先收敛，再补充
+### 2. Foundation Rules Should Stay Reusable
 
-新增 token、颜色、字号、图标分类前，先检查能不能合并到已有体系。
+Color, typography, icon, and spacing rules should not be tied too narrowly to one button, one page, or one temporary use case.
 
-它会避免 AI 为了“看起来完整”不断新增规则，导致规范越来越散。
+The skill checks whether a rule:
 
-### 4. 规范页靠层级和留白，不靠线框堆叠
+- is too component-specific
+- can be reused across scenarios
+- has a clear semantic boundary
+- leaves enough room for future adaptation
 
-设计规范页不是越多卡片越专业。
+### 3. Consolidate Before Adding
 
-这个 skill 会倾向于：
+Before creating a new token, color, type size, icon category, or rule, the skill encourages AI to check whether it can be merged into the existing system.
 
-- 用标题层级表达结构
-- 用留白表达分组
-- 用真实资产表达规则
-- 少用卡片套卡片、线框套线框、装饰性灰底
+This prevents AI-generated design systems from becoming bloated, repetitive, and hard to maintain.
 
-### 5. 新模块要继承已有页面系统
+### 4. Better Layout Is Part Of Better Documentation
 
-新增内容时，不应该临时改变页面宽度、左右边距、字号、模块间距。
+Design specifications are not only about what the rules say. They also need to be readable, scannable, and visually organized.
 
-它会检查：
+The skill helps AI improve documentation layout by checking:
 
-- 页面宽度是否一致
-- 内容区是否对齐
-- 模块间距是否稳定
-- 是否使用 Auto Layout 自然延展
-- 是否和前后规范页看起来像一套系统
+- content width and side margins
+- title hierarchy and section rhythm
+- module spacing and inner padding
+- text breathing room
+- alignment between icons, labels, cards, and examples
+- whether Auto Layout should be used for repeatable groups
+- whether the page feels consistent with the rest of the design system
 
-### 6. 示例必须按真实效果校验
+### 5. Use Hierarchy And Whitespace Before Extra Frames
 
-规范里的图标、颜色、字号、组件示例不能只是摆上去。
+Professional specification pages do not need a border around every idea.
 
-这个 skill 会提醒检查：
+The skill encourages:
 
-- 是否使用真实资产
-- 是否使用真实尺寸
-- 图标是否按可见视觉边界居中
-- 文字是否贴边或裁切
-- 资产数量是否遗漏
-- 命名是否清晰、稳定
+- clear heading hierarchy
+- consistent spacing
+- real component examples
+- fewer nested cards and decorative containers
+- layouts that feel like one coherent documentation system
 
-## 国际化 / 本地化
+### 6. New Sections Must Inherit The Existing Page System
 
-这个 skill 不会默认所有项目都是中文。
+When adding new content to a design-spec page, the skill checks whether it follows the existing page structure:
 
-它会根据项目语境选择语言：
+- page width
+- content width
+- side margins
+- type scale
+- section rhythm
+- Auto Layout behavior
+- alignment with previous and next pages
 
-- 中文产品：使用自然中文 UI 文案和中文规范表达。
-- 英文或国际化产品：使用自然英文 UI 文案和英文规范表达。
-- 语境不明确：保持语言中性，不强行套中文或英文示例。
+### 7. Examples Must Be Verified By Real Visual Effect
 
-## 文件结构
+Design-spec examples should not only be present. They should be visually reliable.
+
+The skill reminds AI to check:
+
+- real asset usage
+- real dimensions
+- optical icon alignment
+- text breathing room
+- clipped or crowded labels
+- missing asset counts
+- clear and stable naming
+
+## Locale-Aware By Default
+
+This skill does not assume every product is Chinese or English.
+
+It chooses language based on product context:
+
+- Chinese products use natural Chinese UI copy and design-spec wording.
+- English or international products use natural English UI copy and design-spec wording.
+- If the locale is unclear, guidance stays language-neutral and avoids forcing one language's examples.
+
+## Repository Structure
 
 ```text
 mobile-ui-spec/
@@ -122,74 +155,97 @@ mobile-ui-spec/
   README.md
 ```
 
-### 这些文件分别是什么
+## File Guide
 
 `SKILL.md`  
-Skill 的入口文件。它告诉 Codex 什么时候使用这个 skill，以及不同任务应该读取哪些参考文件。
+The entry point of the skill. It explains when the skill should be used and which reference files should be loaded for each type of task.
 
 `references/spec-quality.md`  
-用于判断一份 UI 规范是否专业、合理、可调整、可落地。
+Guidance for judging whether a UI specification is professional, reasonable, adaptable, and implementable.
 
 `references/mobile-layout.md`  
-移动端布局、触控区域、安全区、键盘、底部操作和响应式规则。
+Mobile layout rules for navigation, density, touch targets, safe areas, keyboards, bottom actions, and responsive behavior.
 
 `references/localized-copywriting.md`  
-中英文 UI 文案、本地化表达、错误状态、空状态和按钮文案规则。
+Localized UI copywriting guidance for Chinese and English product interfaces.
 
 `references/component-rules.md`  
-按钮、列表、表单、搜索筛选、弹窗、反馈、图标、标签和徽标的组件规则。
+Component rules for buttons, lists, forms, search, filters, dialogs, bottom sheets, feedback, icons, tags, and badges.
 
 `references/design-spec-docs.md`  
-Figma 设计规范文档页的排版、模块组织、Auto Layout、资产展示和检查规则。
+Rules for creating and reviewing Figma design-system documentation pages, including layout, Auto Layout, asset display, and page QA.
 
 `references/review-checklist.md`  
-最终交付前的检查清单。
+A final checklist for reviewing UI specifications and design documentation before delivery.
 
 `agents/openai.yaml`  
-Codex / OpenAI 用来展示 skill 名称、简介和默认提示词的配置文件。
+Metadata used by Codex/OpenAI interfaces to display the skill name, description, and default prompt.
 
-`README.md`  
-给人看的项目说明，也就是你现在正在读的这个文件。
+## How To Use
 
-## 使用方式
+Place the entire `mobile-ui-spec` folder in your Codex skills directory.
 
-把整个 `mobile-ui-spec` 文件夹放到 Codex 的 skills 目录中。
-
-然后在对话中可以这样使用：
+Example prompts:
 
 ```text
-使用 mobile-ui-spec 帮我审查这个设计规范页
+Use mobile-ui-spec to review this design specification page.
 ```
-
-或者：
 
 ```text
-根据 mobile-ui-spec，帮我把这套颜色规范写得更通用、更适合团队交付
+Use mobile-ui-spec to make this color guideline more practical and design-system-ready.
 ```
 
-如果你上传到 GitHub，别人需要下载整个 `mobile-ui-spec` 文件夹，而不是只下载某一个 Markdown 文件。
+```text
+Use mobile-ui-spec to improve the layout and hierarchy of this Figma design-system documentation page.
+```
 
-## 适合谁
+```text
+Use mobile-ui-spec to refine these icon rules and make them easier for designers and developers to apply.
+```
 
-- 正在整理设计系统的 UI/UX 设计师
-- 需要把散乱设计稿沉淀成规范的设计师
-- 想让 AI 更稳定地产出设计规范的人
-- 需要同时处理中文和英文产品规范的团队
-- 需要兼顾设计表达和开发落地的产品团队
+## Who It Is For
 
-## 不适合什么
+- UI/UX designers building design systems
+- Designers turning messy design drafts into reusable rules
+- Teams using AI to write or improve design documentation
+- Product teams working across Chinese and English interfaces
+- Designers who care about both visual quality and implementation handoff
+- Anyone who wants AI to produce cleaner design-spec layouts, not just longer design-spec text
 
-这个 skill 不是一个完整的设计系统模板，也不会替你决定具体品牌风格。
+## What It Is Not
 
-它更像一个判断框架，帮助 AI 在做规范时少犯这些错：
+This is not a complete design-system template, and it does not decide your brand style for you.
 
-- 乱加规则
-- 乱写文案
-- 乱套组件
-- 忽略现有系统
-- 忽略开发和资产维护成本
-- 只追求页面好看但不好落地
+It is a judgment framework that helps AI avoid common design-spec mistakes:
+
+- adding too many rules
+- writing generic documentation
+- over-constraining tokens
+- ignoring existing systems
+- ignoring developer handoff
+- making pages look polished but hard to use
+- creating documentation layouts that are misaligned, crowded, or visually inconsistent
+
+---
+
+## 中文说明
+
+Mobile UI Spec 是一个帮助 AI 更好生成、审查和优化移动端 UI 设计规范的 skill。
+
+它关注的不是“让 AI 写出一堆看起来像规范的文字”，而是让 AI 在输出前先做设计判断：规则是否合理、是否可复用、是否容易维护、排版是否清晰、是否能被设计师和开发真正使用。
+
+它尤其适合这些场景：
+
+- 整理 Figma 设计系统规范页
+- 优化颜色、字体、图标、间距等基础规范
+- 收敛混乱的 token、组件状态和图标分类
+- 把口头反馈转译成专业规范语言
+- 帮助 AI 更好处理规范页排版、层级、留白和模块对齐
+- 检查规范页是否符合已有页面系统
+- 优化中文和英文 UI 文案的本地化表达
+
+这个 skill 的目标是让 AI 少产出模板化、堆砌式、难落地的设计规范，多产出清晰、克制、排版稳定、可维护、适合团队协作的设计文档。
 
 ## License
 
-You can add a license according to your GitHub publishing needs, such as MIT.
+MIT
