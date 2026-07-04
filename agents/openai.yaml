@@ -1,0 +1,7 @@
+interface:
+  display_name: "Mobile UI Spec"
+  short_description: "审查并应用国际化移动端 UI 规范"
+  brand_color: "#2563EB"
+  default_prompt: "Use $mobile-ui-spec to review and refine this mobile UI specification according to the product locale."
+policy:
+  allow_implicit_invocation: true
